@@ -6,8 +6,14 @@ int clockPin = 8; // SRCLK (Shit Register Clock) Pin des 74HC595 ist verbunden m
 int dataPin = 5;  // SER (Serial input) Pin des 74HC595 ist verbunden mit dem digitalen Pin 4
 int enablePin = 6;
 
-int testArr[2][16]= {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                     {0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}};
+int testArr[8][16]= {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                     {0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1},
+                     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+                     {0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0},
+                     {0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0},
+                     {0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0},
+                     {0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0}};
 
 int delTime = 200;
 
@@ -26,7 +32,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  for (int i = 0; i<2; i++) {
+  for (int i = 0; i<8; i++) {
     putShiftRegister(i); 
     delay(delTime);
   }
